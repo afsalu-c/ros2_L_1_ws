@@ -1,0 +1,6 @@
+#led number from 0 to 2
+#led state either 0 or 1
+int64 led_number
+int64 state
+---
+bool success

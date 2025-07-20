@@ -1,0 +1,4 @@
+/my_number_publisher: #forward slash is recommended
+  ros__parameters: #note ddouble underscore
+    number: 50 
+    timer_period: 1.5

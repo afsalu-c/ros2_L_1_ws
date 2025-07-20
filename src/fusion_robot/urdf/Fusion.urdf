@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="fusion_robot">
+    <link name="right_wheel_link_1">
+        <inertial>
+            <origin xyz="-4.369837824924616e-15 1.4901155864777137e-11 0.015" rpy="0.0 -0.0 0.0" />
+            <mass value="0.26294692039245293" />
+            <inertia ixx="0.00022022133431125798" iyy="0.00022022133430771827" izz="0.00040100063056010705" ixy="3.2526065174565133e-19" iyz="6.505213034913027e-19" ixz="-2.168404344971009e-19" />
+        </inertial>
+        <visual name="right_wheel_link_1_visual">
+            <origin xyz="0.06 -0.055 -0.09" rpy="-1.5707963267948966 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://fusion_robot/meshes/right_wheel_link_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_wheel_link_1_collision">
+            <origin xyz="0.06 -0.055 -0.09" rpy="-1.5707963267948966 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://fusion_robot/meshes/right_wheel_link_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="lidar_link_1">
+        <inertial>
+            <origin xyz="1.7763568394002505e-17 -3.392591660227754e-17 0.009999999999999983" rpy="0.0 -0.0 0.0" />
+            <mass value="0.13873273158252514" />
+            <inertia ixx="6.011751701909219e-05" iyy="6.011751701909436e-05" izz="0.00011098618526601779" ixy="7.844391802791421e-21" iyz="-1.0982148523908019e-20" ixz="2.168404344971009e-19" />
+        </inertial>
+        <visual name="lidar_link_1_visual">
+            <origin xyz="-0.085 0.0 -0.149" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://fusion_robot/meshes/lidar_link_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="lidar_link_1_collision">
+            <origin xyz="-0.085 0.0 -0.149" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://fusion_robot/meshes/lidar_link_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.003458639058207387 0.0 0.08006051313388791" rpy="0.0 0.0 0.0" />
+            <mass value="4.4782082828671435" />
+            <inertia ixx="0.015217327368306194" iyy="0.027281258277710236" izz="0.03547433786821727" ixy="2.468004822731018e-17" iyz="1.8510036170482633e-17" ixz="-0.0003767379757184093" />
+        </inertial>
+        <visual name="base_link_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://fusion_robot/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="base_link_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://fusion_robot/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_wheel_link_1">
+        <inertial>
+            <origin xyz="-4.378719609121617e-15 1.4901164746561336e-11 -0.015" rpy="0.0 -0.0 0.0" />
+            <mass value="0.26294692039245293" />
+            <inertia ixx="0.00022022133431125884" iyy="0.00022022133430771784" izz="0.00040100063056010683" ixy="-2.168404344971009e-19" iyz="0.0" ixz="2.168404344971009e-19" />
+        </inertial>
+        <visual name="left_wheel_link_1_visual">
+            <origin xyz="0.06 -0.055 0.09" rpy="-1.5707963267948966 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://fusion_robot/meshes/left_wheel_link_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_wheel_link_1_collision">
+            <origin xyz="0.06 -0.055 0.09" rpy="-1.5707963267948966 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://fusion_robot/meshes/left_wheel_link_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_link_lidar_joint" type="fixed">
+        <origin xyz="0.085 0.0 0.149" rpy="0.0 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="lidar_link_1" />
+    </joint>
+    <joint name="base_link_right_wheel_joint" type="continuous">
+        <origin xyz="-0.06 -0.09 0.055" rpy="1.5707963267948966 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="right_wheel_link_1" />
+        <axis xyz="0.0 0.0 1.0" />
+    </joint>
+    <joint name="base_link_left_wheel_joint" type="continuous">
+        <origin xyz="-0.06 0.09 0.055" rpy="1.5707963267948966 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="left_wheel_link_1" />
+        <axis xyz="0.0 0.0 1.0" />
+    </joint>
+</robot>

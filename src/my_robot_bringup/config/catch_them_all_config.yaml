@@ -1,0 +1,8 @@
+/turtle_controller: #NOTE it is node name
+  ros__parameters:
+    catch_closet_turtle_first: True
+
+/turtle_spawner:
+  ros__parameters:
+    turtle_name_prefix: "my_turtle"
+    spawn_frequency: 1.5

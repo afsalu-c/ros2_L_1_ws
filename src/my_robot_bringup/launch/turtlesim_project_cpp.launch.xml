@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="turtlesim" exec="turtlesim_node"/>
+    <!-- <node pkg="turtlesim_catch_them_all" exec="set_pen_color_green" /> in python -->
+    <node pkg="turtlesim_project_cpp" exec="controller"/>
+    <node pkg="turtlesim_project_cpp" exec="spawner"/>
+</launch>
