@@ -48,6 +48,11 @@ ament_target_dependencies(battery rclcpp my_robot_interfaces)
 add_executable(led_panel src/led_panel.cpp)
 ament_target_dependencies(led_panel rclcpp my_robot_interfaces)
 
+add_executable(compute_area_of_rectangle_server src/compute_area_of_rectangle_server.cpp)
+ament_target_dependencies(compute_area_of_rectangle_server rclcpp my_robot_interfaces)
+
+add_executable(compute_area_of_rectangle_client src/compute_area_of_rectangle_client.cpp)
+ament_target_dependencies(compute_area_of_rectangle_client rclcpp my_robot_interfaces)
 #installin node
 install(TARGETS #not need to write any more 
   cpp_node
@@ -62,6 +67,8 @@ install(TARGETS #not need to write any more
   hw_status_publisher
   battery
   led_panel
+  compute_area_of_rectangle_server
+  compute_area_of_rectangle_client
   DESTINATION lib/${PROJECT_NAME} #don't make any typo here
 )
 

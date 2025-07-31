@@ -49,7 +49,7 @@ private:
 
     void callSetLed(int led_number, int state)
     {
-        auto request = std::make_shared<my_robot_interfaces::srv::SetLed::Request>();
+        auto request = std::make_shared<my_robot_interfaces::srv::SetLed::Request>(); //equivalent to publisher
         request->led_number = led_number;
         request->state = state;
 

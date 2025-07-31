@@ -10,7 +10,7 @@ public:
    AddTwoIntsClientNode() : Node("add_two_ints_client_node")
    {
         client_ = this->create_client<example_interfaces::srv::AddTwoInts>("add_two_ints");
-
+         
    }
 
    void callAddTwoInts(int a, int b)
