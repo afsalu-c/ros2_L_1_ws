@@ -4,8 +4,6 @@
 
 * Below is the result of turtlesim : Catch them all project
 ## 📽️ Project Demo
-Check out the video demo on [LinkedIn][![Watch the demo](Results/turtlesim_demo_thumb.png)](https://www.linkedin.com/posts/afsalu-rahman-c_ros2-rosjazzy-robotics-activity-7352510482953486336--Z5g)
-
 [![Watch the demo](Results/Project_frame.png)](https://www.linkedin.com/posts/afsalu-rahman-c_ros2-rosjazzy-robotics-activity-7352510482953486336--Z5g)
 
 
